@@ -1,6 +1,6 @@
 from UI.ui import read_student, print_menu
 from Repository.adauga import adauga
-from Utility.sort import sort_note
+from Utility.sort import sort_students, sort_alpha_note
 
 
 students = [
@@ -19,16 +19,28 @@ students = [
         "name": "Rob",
         "note": 1
     },
+    {
+        "id": 3,
+        "name": "Aaa",
+        "note": 6
+    },
 ]
 
 while True:
-    print_menu()
-    op = int(input("Options:"))
-    if op == 1:
-        student = read_student(students)
-        adauga(students, student)
-        print (students)
-    if op == 2:
-        sorted_students = sort_note(students)
-        print("Sorted:")
-        print(sorted_students)
+    try:
+        print_menu()
+        op = int(input("Options:"))
+        if op == 1:
+            student = read_student(students)
+            adauga(students, student)
+            print (students)
+        if op == 2:
+            sorted_students = sort_students(students, "note")
+            print("Sorted:")
+            print(sorted_students)
+        if op == 3:
+            sorted_students = sort_alpha_note(students)
+            print("Sorted:")
+            print(sorted_students)
+    except Exception as e:
+        print(e)

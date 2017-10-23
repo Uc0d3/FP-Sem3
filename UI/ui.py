@@ -15,5 +15,6 @@ def print_menu():
     options = """
     1 - Add student
     2 - Sort Students by note
+    3 - Sort name where note > 5
     """
     print(options)
