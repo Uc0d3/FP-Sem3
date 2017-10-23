@@ -6,7 +6,7 @@ def read_student(students):
     student = {
         "id": id,
         "name": name,
-        "nota": nota
+        "note": nota
     }
     return student
 
